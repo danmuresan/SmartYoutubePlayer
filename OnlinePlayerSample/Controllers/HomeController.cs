@@ -19,5 +19,10 @@ namespace OnlinePlayerSample.Controllers
 
             return View();
         }
+
+        public ActionResult YoutubeDemo()
+        {
+            return View();
+        }
     }
 }
