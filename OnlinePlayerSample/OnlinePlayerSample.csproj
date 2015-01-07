@@ -196,6 +196,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\custom.css" />
     <Content Include="Content\SoundManager\BarUI\bar-ui.css" />
     <Content Include="Content\SoundManager\image\black-10.png" />
     <Content Include="Content\SoundManager\image\black-25.png" />
@@ -298,6 +299,8 @@
     <Content Include="Content\SoundManager\image\icon_play.gif" />
     <Content Include="Content\SoundManager\image\icon_play.png" />
     <Content Include="Content\SoundManager\image\test.gif" />
+    <Content Include="Content\themes\base\images\Chrysanthemum.jpg" />
+    <Content Include="Content\themes\base\images\Desert.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -355,6 +358,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\Helpers\HorizontalPlaylistHelper.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -419,6 +423,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\YoutubeDemo.cshtml" />
+    <Content Include="Views\Player\_FullWidthPlayer.cshtml" />
+    <Content Include="Views\Player\_HorizontalPlaylist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
