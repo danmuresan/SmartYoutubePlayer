@@ -17,9 +17,9 @@ $(document).ready(function () {
             e.dataTransfer.setData('text/html', this.innerHTML);
         }
 
-        var cols = document.querySelectorAll('.playlist_tiles .box');
-        [].forEach.call(cols, function (col) {
-            col.addEventListener('dragstart', handleDragStart, false);
+        var boxes = document.querySelectorAll('.playlist_tiles .box');
+        [].forEach.call(boxes, function (box) {
+            box.addEventListener('dragstart', handleDragStart, false);
         });
         
         function handleDragOver(e) {
@@ -44,8 +44,8 @@ $(document).ready(function () {
         function handleDragEnd(e) {
             // this/e.target is the source node.
 
-            [].forEach.call(cols, function (col) {
-                col.classList.remove('over');
+            [].forEach.call(boxes, function (box) {
+                box.classList.remove('over');
             });
         }
         
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
             // Don't do anything if dropping the same box we're dragging.
             if (dragSrcEl != this) {
-                // Set the source box's HTML to the HTML of the column we dropped on.
+                // Set the source box's HTML to the HTML of the box we dropped on.
                 dragSrcEl.innerHTML = this.innerHTML;
                 this.innerHTML = e.dataTransfer.getData('text/html');
             }
@@ -68,14 +68,14 @@ $(document).ready(function () {
             return false;
         }
 
-        var cols = document.querySelectorAll('.playlist_tiles .box');
-        [].forEach.call(cols, function (col) {
-            col.addEventListener('dragstart', handleDragStart, false);
-            col.addEventListener('dragenter', handleDragEnter, false);
-            col.addEventListener('dragover', handleDragOver, false);
-            col.addEventListener('dragleave', handleDragLeave, false);
-            col.addEventListener('drop', handleDrop, false);
-            col.addEventListener('dragend', handleDragEnd, false);
+        var boxes = document.querySelectorAll('.playlist_tiles .box');
+        [].forEach.call(boxes, function (box) {
+            box.addEventListener('dragstart', handleDragStart, false);
+            box.addEventListener('dragenter', handleDragEnter, false);
+            box.addEventListener('dragover', handleDragOver, false);
+            box.addEventListener('dragleave', handleDragLeave, false);
+            box.addEventListener('drop', handleDrop, false);
+            box.addEventListener('dragend', handleDragEnd, false);
         });
         
     }

@@ -6,13 +6,20 @@
     width: 100%;
 }
 
+#full_width_player {
+    border-top: 1px solid #055B80;
+    border-left: 1px solid #055B80;
+    border-right: 1px solid #055B80;
+    border-radius: 3px;
+}
+
 .playlist_tiles {
     display: table;
-    margin: 0 auto;
+    margin: 0 auto 20px 5%;
 }
 
 .wrapper {
-    max-width: 620px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -23,7 +30,7 @@
     height: 200px;
     background: #FCC;
     z-index: 0;
-    margin: 2px 2px 2px -2px;
+    margin: 2px 2px 2px 2px;
     transition: all .15s ease-in-out;
 }
 
@@ -36,12 +43,13 @@
 
 .horizontal_box {
     display: inline-flexbox;
-    overflow-x: scroll;
-    overflow-y: auto;
-    border: 3px solid #21a1d2;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 3px solid #055B80;
     background: #777777;
-    border-radius: 2px;
-    max-height: 180px;
+    border-radius: 3px;
+    max-height: 170px;
+    margin-top: -2px;
 }
 
 .vid-container {
@@ -82,6 +90,7 @@
 	float: left;
 	margin: 0;
 	padding: 10px;
+    margin-top: 4px;
     border: 1px solid dimgrey;
     border-radius: 10px;
 }
