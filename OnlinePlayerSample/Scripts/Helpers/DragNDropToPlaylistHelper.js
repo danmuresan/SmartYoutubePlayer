@@ -17,7 +17,7 @@ var bin = document.querySelector('#playlist_box');
 bin.addEventListener('dragover', function (e) {
     if (e.preventDefault) e.preventDefault(); // allows us to drop
     this.className = 'over';
-    e.dataTransfer.dropEffect = 'copy';
+    e.dataTransfer.dropEffect = 'move';
     return false;
 }, false);
 
