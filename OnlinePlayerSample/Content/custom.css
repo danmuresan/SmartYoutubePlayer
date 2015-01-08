@@ -6,6 +6,24 @@
     width: 100%;
 }
 
+#playlist_box {
+    transition: all .15s ease-in-out;
+    display: inline-flexbox;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 3px solid #055B80;
+    background: #777777;
+    border-radius: 3px;
+    max-height: 170px;
+    margin-top: -2px;
+}
+
+#playlist_box.over {
+    background-color: antiquewhite;
+    border-radius: 3px;
+    border: 2px dashed #777777;
+}
+
 #full_width_player {
     border-top: 1px solid #055B80;
     border-left: 1px solid #055B80;
@@ -34,180 +52,170 @@
     transition: all .15s ease-in-out;
 }
 
-.box:hover {
-    background: #9CC;
-    z-index: 100;
-    transform: scale(1.2,1.2);
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
-}
-
-.horizontal_box {
-    display: inline-flexbox;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    border: 3px solid #055B80;
-    background: #777777;
-    border-radius: 3px;
-    max-height: 170px;
-    margin-top: -2px;
-}
+    .box:hover {
+        background: #9CC;
+        z-index: 100;
+        transform: scale(1.2,1.2);
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+    }
 
 .vid-container {
-	position: relative;
-	padding-bottom: 52%;
-	padding-top: 30px; 
-	height: 0; 
+    position: relative;
+    padding-bottom: 52%;
+    padding-top: 30px;
+    height: 0;
 }
 
-.vid-container iframe,
-.vid-container object,
-.vid-container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
+    .vid-container iframe,
+    .vid-container object,
+    .vid-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
 .vid-list-container {
-	width: 92%;
-	overflow: hidden;
-	margin-top: 20px;
-	margin-left:4%;
-	padding-bottom: 20px;
+    width: 92%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: 4%;
+    padding-bottom: 20px;
 }
 
 .vid-list {
-	width: 1344px;
-	position: relative;
-	top:0;
-	left: 0;
+    width: 1344px;
+    position: relative;
+    top: 0;
+    left: 0;
 }
+
 .vid-item {
-	display: block;
-	width: 140px;
-	height: 140px;
-	float: left;
-	margin: 0;
-	padding: 10px;
+    display: block;
+    width: 140px;
+    height: 140px;
+    float: left;
+    margin: 0;
+    padding: 10px;
     margin-top: 4px;
     border: 1px solid dimgrey;
     border-radius: 10px;
 }
 
 .thumb {
-	overflow:hidden;
-	height: 84px;
+    overflow: hidden;
+    height: 84px;
 }
 
-.thumb img {
-	width: 100%;
-	position: relative;
-	top: -13px;
-}
+    .thumb img {
+        width: 100%;
+        position: relative;
+        top: -13px;
+    }
 
 .vid-item .desc {
-	color: #21A1D2;
-	font-size: 15px;
-	margin-top:5px;
+    color: #21A1D2;
+    font-size: 15px;
+    margin-top: 5px;
 }
 
 .arrows {
-	position:relative;
-	width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .arrow-left {
-	color: #fff;
-	position: absolute;
-	background: #777;
-	padding: 15px;
-	left: -25px;
-	top: -130px;
-	z-index: 99;
-	cursor: pointer;
+    color: #fff;
+    position: absolute;
+    background: #777;
+    padding: 15px;
+    left: -25px;
+    top: -130px;
+    z-index: 99;
+    cursor: pointer;
 }
 
 .arrow-right {
-	color: #fff;
-	position: absolute;
-	background: #777;
-	padding: 15px;
-	right: -25px;
-	top: -130px;
-	z-index:100;
-	cursor: pointer;
+    color: #fff;
+    position: absolute;
+    background: #777;
+    padding: 15px;
+    right: -25px;
+    top: -130px;
+    z-index: 100;
+    cursor: pointer;
 }
 
 @media (max-width: 624px) {
-	.arrows {
-		position:relative;
-		margin: 0 auto;
-		width:96px;
-	}
-	.arrow-left {
-		left: 0;
-		top: -20px;
-	}
+    .arrows {
+        position: relative;
+        margin: 0 auto;
+        width: 96px;
+    }
 
-	.arrow-right {
-		right: 0;
-		top: -20px;
-	}
+    .arrow-left {
+        left: 0;
+        top: -20px;
+    }
+
+    .arrow-right {
+        right: 0;
+        top: -20px;
+    }
 }
 
 /* Draggable stuff here 
     ***************************************************************/
 /* Prevent the text contents of draggable elements from being selectable. */
 [draggable] {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  /* Required to make elements draggable in old WebKit */
-  -khtml-user-drag: element;
-  -webkit-user-drag: element;
-}
-.box {
-  height: 150px;
-  width: 150px;
-  float: left;
-  border: 2px solid #666666;
-  background-color: #ccc;
-  margin-right: 5px;
-  -webkit-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 3px #000;
-  -ms-box-shadow: inset 0 0 3px #000;
-  box-shadow: inset 0 0 3px #000;
-  text-align: center;
-  cursor: move;
-}
-.box header {
-  color: #fff;
-  text-shadow: #000 0 1px;
-  box-shadow: 5px;
-  padding: 5px;
-  background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  background: -webkit-gradient(linear, left top, right top,
-                               color-stop(0, rgb(0,0,0)),
-                               color-stop(0.50, rgb(79,79,79)),
-                               color-stop(1, rgb(21,21,21)));
-  background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
-  border-bottom: 1px solid #ddd;
-  -webkit-border-top-left-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -ms-border-radius-topleft: 10px;
-  border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -ms-border-top-right-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-right-radius: 10px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
 }
 
-.box.over {
-  border: 2px dashed #000;
+.box {
+    height: 150px;
+    width: 150px;
+    float: left;
+    border: 2px solid #666666;
+    background-color: #ccc;
+    margin-right: 5px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 3px #000;
+    -ms-box-shadow: inset 0 0 3px #000;
+    box-shadow: inset 0 0 3px #000;
+    text-align: center;
+    cursor: move;
 }
+
+    .box header {
+        color: #fff;
+        text-shadow: #000 0 1px;
+        box-shadow: 5px;
+        padding: 5px;
+        background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+        background: -webkit-gradient(linear, left top, right top, color-stop(0, rgb(0,0,0)), color-stop(0.50, rgb(79,79,79)), color-stop(1, rgb(21,21,21)));
+        background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+        background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+        border-bottom: 1px solid #ddd;
+        -webkit-border-top-left-radius: 10px;
+        -moz-border-radius-topleft: 10px;
+        -ms-border-radius-topleft: 10px;
+        border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -ms-border-top-right-radius: 10px;
+        -moz-border-radius-topright: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .box.over {
+        border: 2px dashed #000;
+    }

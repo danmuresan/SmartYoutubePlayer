@@ -1,5 +1,4 @@
 ﻿// script based on tutorial from here - http://www.html5rocks.com/en/tutorials/dnd/basics/
-
 $(document).ready(function () {
 
     if (Modernizr.canvas) {
@@ -43,6 +42,7 @@ $(document).ready(function () {
 
         function handleDragEnd(e) {
             // this/e.target is the source node.
+            this.style.opacity = '1.0';
 
             [].forEach.call(boxes, function (box) {
                 box.classList.remove('over');
