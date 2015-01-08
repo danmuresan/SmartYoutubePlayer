@@ -1,5 +1,6 @@
 ﻿var links = document.querySelectorAll('.playlist_tiles > ul > li'), el = null;
 var msie = /*@cc_on!@*/0;
+var elementNode = null;
 
 for (var i = 0; i < links.length; i++) {
     el = links[i];
@@ -34,23 +35,36 @@ bin.addEventListener('dragleave', function () {
 bin.addEventListener('drop', function (e) {
     if (e.stopPropagation) e.stopPropagation(); // stops the browser from redirecting...why???
 
-    var el = document.getElementById(e.dataTransfer.getData('Text'));
+    var elementText = e.dataTransfer.getData('Text');
+    var el = document.getElementById(elementText);
 
-    el.parentNode.removeChild(el);
+
+    var htmlElementBox = "<div class='vid-item' id='track" + elementText + "'><div class='thumb'><img src='Content/themes/base/images/Desert.jpg'></div><div class='desc'>Track no. " + elementText + "</div></div>";
+    elementNode = document.createElement('div');
+    elementNode.innerHTML = htmlElementBox;
+    //el.parentNode.removeChild(el);
 
     // stupid nom text + fade effect
     bin.className = '';
-    bin.appendChild(y);
+
+    if ($(bin).children('#track' + elementText).length === 0) {
+        console.log('Track ' + elementText + ' added to playlist...');
+        bin.appendChild(elementNode);
+    }
+    else {
+        console.log('Track ' + elementText + ' already exists in playlist');
+    }
+
 
     setTimeout(function () {
         var t = setInterval(function () {
-            if (y.style.opacity <= 0) {
+            if (elementNode.style !== undefined && elementNode.style.opacity <= 0) {
                 if (msie) { // don't bother with the animation
-                    y.style.display = 'none';
+                    elementNode.style.display = 'none';
                 }
                 clearInterval(t);
             } else {
-                y.style.opacity -= 0.1;
+                elementNode.style.opacity -= 0.1;
             }
         }, 50);
     }, 250);
