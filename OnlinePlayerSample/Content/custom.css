@@ -18,6 +18,10 @@
     margin-top: -2px;
 }
 
+.horizontal_box {
+    display: table-row;
+}
+
 #playlist_box.over {
     background-color: antiquewhite;
     border-radius: 3px;
@@ -92,13 +96,15 @@
 }
 
 .vid-item {
-    display: block;
+    display: table-cell;
     width: 140px;
     height: 140px;
     float: left;
     margin: 0;
     padding: 10px;
     margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 2px;
     border: 1px solid dimgrey;
     border-radius: 10px;
 }

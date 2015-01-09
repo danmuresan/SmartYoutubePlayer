@@ -51,22 +51,8 @@ bin.addEventListener('drop', function (e) {
 
 
     var elementNode = $('.horizontal_box > #track' + elementText).get(0);
-    $(elementNode).css('opacity', '1.0');
+    $(elementNode).css('opacity', '0.5').show().animate({ opacity: 1 }, 250, 'linear');
 
-    setTimeout(function () {
-        var t = setInterval(function () {
-            if (elementNode !== null && $(elementNode).css('opacity') <= 0) {
-                if (msie) { // don't bother with the animation
-                    elementNode.style.display = 'none';
-                }
-                clearInterval(t);
-            } else {
-                var op = $(elementNode).css('opacity');
-                op -= 0.1;
-                $(elementNode).css('opacity', '' + op);
-            }
-        }, 50);
-    }, 250);
 
     return false;
 }, false);
