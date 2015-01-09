@@ -38,33 +38,32 @@ bin.addEventListener('drop', function (e) {
     var elementText = e.dataTransfer.getData('Text');
     var el = document.getElementById(elementText);
 
-
-    var htmlElementBox = "<div class='vid-item' id='track" + elementText + "'><div class='thumb'><img src='Content/themes/base/images/Desert.jpg'></div><div class='desc'>Track no. " + elementText + "</div></div>";
-    elementNode = document.createElement('div');
-    elementNode.innerHTML = htmlElementBox;
-    //el.parentNode.removeChild(el);
-
     // stupid nom text + fade effect
     bin.className = '';
 
-    if ($(bin).children('#track' + elementText).length === 0) {
+    if ($('.horizontal_box > #track' + elementText).length == 0) {
         console.log('Track ' + elementText + ' added to playlist...');
-        bin.appendChild(elementNode);
+        $('.horizontal_box').append("<div class='vid-item' id='track" + elementText + "'><div class='thumb'><img src='Content/themes/base/images/Desert.jpg'></div><div class='desc'>Track no. " + elementText + "</div></div>");
     }
     else {
         console.log('Track ' + elementText + ' already exists in playlist');
     }
 
 
+    var elementNode = $('.horizontal_box > #track' + elementText).get(0);
+    $(elementNode).css('opacity', '1.0');
+
     setTimeout(function () {
         var t = setInterval(function () {
-            if (elementNode.style !== undefined && elementNode.style.opacity <= 0) {
+            if (elementNode !== null && $(elementNode).css('opacity') <= 0) {
                 if (msie) { // don't bother with the animation
                     elementNode.style.display = 'none';
                 }
                 clearInterval(t);
             } else {
-                elementNode.style.opacity -= 0.1;
+                var op = $(elementNode).css('opacity');
+                op -= 0.1;
+                $(elementNode).css('opacity', '' + op);
             }
         }, 50);
     }, 250);
