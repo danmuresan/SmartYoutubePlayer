@@ -41,13 +41,14 @@
                 </div>
 
                 <div class="pull-right nav-collapse collapse" id="navbar_btn_container">
-                    <div class="dropdown" id="navbar_dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False" href="#">Dropdown
-                            @*<b class="caret"></b>*@
+                    <div class="dropdown btn" id="navbar_dropdown" style="display: none">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False" href="#">
+                            <img src="http://wapmaster.wen9.com/ikon/24x24/4.png" id="navbar_profile_image" class="profile-image img-circle"> Username <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>Entry 1</li>
                             <li>Entry 2</li>
+                            <li><a href="@Url.Action("LogOff", "Account")">Log Out</a></li>
                         </ul>
                     </div>
                     <a class="btn btn-default navbar_btn" id="login_btn" href="@Url.Action("Login", "Home", new { @class = "modal-link btn btn-success" })" role="button">Log In</a>

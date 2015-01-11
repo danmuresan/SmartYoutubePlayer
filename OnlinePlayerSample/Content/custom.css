@@ -9,6 +9,29 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
 }
 
+/*Dropdown expand on hover trick*/
+.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+
+.dropdown.dropdown-menu {
+    margin-top: 0;
+}
+
+.dropdown a:hover {
+    text-decoration: none;
+    color: #08c;
+}
+
+.dropdown #navbar_profile_image {
+    margin-right: 5px;
+}
+
+.dropdown a.profile-image {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 #register_container {
     color: #fffff0;
 }
@@ -49,15 +72,6 @@
     margin-top: 3px;
 }
 
-/*#navbar_search_form
-{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin: auto;
-}*/
-
 #navbar_search_form {
     margin-left: 100%;
 }
@@ -87,9 +101,9 @@
     display: inline-flex;
 }
 
-#navbar_btn_container > * {
-    margin-right: 7px;
-}
+    #navbar_btn_container > * {
+        margin-right: 7px;
+    }
 
 #navbar_dropdown {
     margin-top: 8px;
