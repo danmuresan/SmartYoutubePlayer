@@ -41,16 +41,32 @@
                 </div>
 
                 <div class="pull-right nav-collapse collapse" id="navbar_btn_container">
-                    <div class="dropdown btn" id="navbar_dropdown" style="display: none">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False" href="#">
-                            <img src="@Url.Content("~/Content/themes/base/images/default_icon_24x24.png")" id="navbar_profile_image" class="profile-image img-circle"> Username <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>Entry 1</li>
-                            <li>Entry 2</li>
-                            <li><a href="@Url.Action("LogOff", "Account")">Log Out</a></li>
-                        </ul>
-                    </div>
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <div class="dropdown btn" id="navbar_dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False" href="#">
+                                <img src="@Url.Content("~/Content/themes/base/images/default_icon_24x24.png")" id="navbar_profile_image" class="profile-image img-circle">
+                                @Html.Encode(User.Identity.Name)&nbsp;&nbsp;<b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>Entry 1</li>
+                                <li>Entry 2</li>
+                                <li>
+                                    <div style="display:none">
+                                        @Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logout_form" })
+                                        {
+                                            <input type="submit" value="Log Out">
+                                        }
+                                    </div>
+                                    @*@Ajax.ActionLink("Log Out", "LogOff", "Account", null, new { HttpMethod = "POST", Url = Url.Action("LogOff", "Account") })*@
+                                    @*<a id="navbar_logout_btn" href="@Url.Action("LogOff", "Account")">Log Out</a>*@
+                                    <a id="navbar_logout_btn" href="#">Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+
                     <a class="btn btn-default navbar_btn" id="login_btn" href="@Url.Action("Login", "Home", new { @class = "modal-link btn btn-success" })" role="button">Log In</a>
                     <a class="btn btn-primary navbar_btn" id="register_btn" href="@Url.Action("Register", "Account")" role="button">Create Account</a>
                 </div>
@@ -81,11 +97,12 @@
         @RenderBody()
         <hr>
         <footer id="custom_footer">
-            <p>&copy; Company @System.DateTime.Now.ToString("yyyy")</p>
+            <p>&copy; SmartStreamer @System.DateTime.Now.ToString("yyyy") by barca_d - Powered by Grooveshark&copy</p>
         </footer>
     </div>
     @Scripts.Render("~/js")
     @Scripts.Render("~/Scripts/Helpers/LoginModalHelper.js")
+    @Scripts.Render("~/Scripts/Helpers/LogOutHelper.js")
     @RenderSection("Scripts", required: false)
 </body>
 </html>
