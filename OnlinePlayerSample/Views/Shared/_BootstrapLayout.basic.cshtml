@@ -41,13 +41,14 @@
                 </div>
 
                 <div class="pull-right nav-collapse collapse">
-                    <button class="btn btn-default navbar_btn" id="login_btn" href="@Url.Action("Login", "Home", new { @class = "modal-link btn btn-success" })" role="button">Log In</button>
-                    <button class="btn btn-primary navbar_btn" id="register_btn" href="@Url.Action("Register", "Home")" role="button">Create Account</button>
+                    <a class="btn btn-default navbar_btn" id="login_btn" href="@Url.Action("Login", "Home", new { @class = "modal-link btn btn-success" })" role="button">Log In</a>
+                    <a class="btn btn-primary navbar_btn" id="register_btn" href="@Url.Action("Register", "Account")" role="button">Create Account</a>
                 </div>
 
             </div>
         </div>
     </div>
+    
 
     <div id="modal-container" class="modal fade"
         tabindex="-1" role="dialog">

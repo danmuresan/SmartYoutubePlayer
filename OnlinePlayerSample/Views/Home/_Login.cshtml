@@ -5,9 +5,9 @@
 }
 
 <div class="modal-body">
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Login", "Account"))
     {
-        @Html.ValidationSummary(true, "Login failed. Check your login details.");
+        @Html.AntiForgeryToken()
         <div>
             <div class="editor-label">
                 @Html.LabelFor(u => u.UserName)
@@ -28,16 +28,18 @@
                 @Html.LabelFor(u => u.RememberMe)
             </div>
             <input class="btn btn-default" type="submit" value="Log In" />
-
+            <a class="btn btn-info" type="button" href="@Url.Action("Register", "Account")">Register Now</a>
         </div>
     }
 
 </div>
 
-<script type="text/javascript">
-    $(function () {
-        $('#approve-btn').click(function () {
-            $('#modal-container').modal('hide');
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('#approve-btn').click(function () {
+                $('#modal-container').modal('hide');
+            });
         });
-    });
-</script>
+    </script>
+}

@@ -9,6 +9,37 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
 }
 
+#register_container {
+    color: #fffff0;
+}
+
+    #register_container legend {
+        color: #cccccc;
+    }
+
+    #register_container .validation-summary-errors {
+        color: #b94a48;
+        background-color: #f2dede;
+        border-color: #eed3d7;
+        border-radius: 4px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+#login_container {
+    color: #f5f5f5;
+}
+
+    #login_container h2 {
+        color: #fffff0;
+    }
+
+    #login_container .field-validation-error {
+        color: #F5CECE;
+    }
+
 #custom_footer {
     color: #fff;
 }
