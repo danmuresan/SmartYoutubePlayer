@@ -40,7 +40,16 @@
                     </form>
                 </div>
 
-                <div class="pull-right nav-collapse collapse">
+                <div class="pull-right nav-collapse collapse" id="navbar_btn_container">
+                    <div class="dropdown" id="navbar_dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="False" href="#">Dropdown
+                            @*<b class="caret"></b>*@
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>Entry 1</li>
+                            <li>Entry 2</li>
+                        </ul>
+                    </div>
                     <a class="btn btn-default navbar_btn" id="login_btn" href="@Url.Action("Login", "Home", new { @class = "modal-link btn btn-success" })" role="button">Log In</a>
                     <a class="btn btn-primary navbar_btn" id="register_btn" href="@Url.Action("Register", "Account")" role="button">Create Account</a>
                 </div>
@@ -48,10 +57,10 @@
             </div>
         </div>
     </div>
-    
+
 
     <div id="modal-container" class="modal fade"
-        tabindex="-1" role="dialog">
+        tabindex="-1" role="dialog" style="display: none">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

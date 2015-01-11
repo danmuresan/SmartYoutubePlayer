@@ -83,6 +83,18 @@
     margin-top: 8px;
 }
 
+#navbar_btn_container {
+    display: inline-flex;
+}
+
+#navbar_btn_container > * {
+    margin-right: 7px;
+}
+
+#navbar_dropdown {
+    margin-top: 8px;
+}
+
 #login_btn {
     margin-top: 8px;
 }
