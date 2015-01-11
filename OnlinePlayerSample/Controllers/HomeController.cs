@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace OnlinePlayerSample.Controllers
 {
@@ -23,6 +19,11 @@ namespace OnlinePlayerSample.Controllers
         public ActionResult YoutubeDemo()
         {
             return View();
+        }
+
+        public ActionResult Login()
+        {
+            return PartialView("_Login");
         }
     }
 }

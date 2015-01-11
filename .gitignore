@@ -41,3 +41,23 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.xml
+*.dll
+*.pdb
+*.nupkg
+packages/knockoutjs.2.2.0/Content/Scripts/knockout-2.2.0.debug.js
+packages/Microsoft.AspNet.WebApi.Core.4.0.20710.0/content/web.config.transform
+*.suo
+*.exe
+*.ps1
+*.srcsrv
+packages/Microsoft.Net.Http.2.0.20710.0/lib/net45/_._
+*.config
+*.psd1
+*.psm1
+*.txt
+*.transform
+*.cache
+OnlinePlayerSample/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+OnlinePlayerSample/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+OnlinePlayerSample/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs

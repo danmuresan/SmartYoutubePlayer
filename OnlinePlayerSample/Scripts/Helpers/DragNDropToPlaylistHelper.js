@@ -49,7 +49,6 @@ bin.addEventListener('drop', function (e) {
         console.log('Track ' + elementText + ' already exists in playlist');
     }
 
-
     var elementNode = $('.horizontal_box > #track' + elementText).get(0);
     $(elementNode).css('opacity', '0.5').show().animate({ opacity: 1 }, 250, 'linear');
 

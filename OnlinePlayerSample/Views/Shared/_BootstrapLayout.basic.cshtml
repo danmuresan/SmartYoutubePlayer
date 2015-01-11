@@ -1,0 +1,65 @@
+@using System.Web.Optimization
+@using BootstrapSupport
+@using NavigationRoutes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="@Styles.Url("~/content/css")" rel="stylesheet"/>
+    @RenderSection("head", required: false)
+    @Html.Partial("_html5shiv")
+    @Styles.Render("~/Content/custom.css")
+    @Styles.Render("~/Content/SoundManager/BarUI/bar-ui.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @* favicons and touch icons go here *@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" id="main_nav_bar">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="@Url.Action("Index", "Home")" id="navbar_title" title="SmartStreamer">SmartStreamer</a>
+                <div class="nav-collapse collapse">
+                    @Html.Navigation()
+                </div>
+
+                <div class="col-sm-3 col-md-3 pull-left">
+                    <form class="navbar-form" id="navbar_search_form" role="search">
+                        <div class="input-group" id="navbar_search_container">
+                            <input type="text" class="form-control" placeholder="Search" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="icon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="pull-right nav-collapse collapse">
+                    <button class="btn btn-default navbar_btn" id="login_btn" href="@Url.Action("Login", "Home")" role="button">Log In</button>
+                    <button class="btn btn-primary navbar_btn" id="register_btn" href="#" role="button">Create Account</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @RenderSection("featured", required: false)
+        @Html.Partial("_alerts")
+        @Html.Partial("_validationSummary")
+        @RenderBody()
+        <hr>
+        <footer id="custom_footer">
+            <p>&copy; Company @System.DateTime.Now.ToString("yyyy")</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/js")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
