@@ -1,7 +1,7 @@
 ﻿var swfPath = '/Scripts/SoundManager/';
 var sampleMusicPath = '/Scripts/SoundManager/sampleMusic/Kalimba.mp3';
 
-var count = 8;
+var count = 2;
 
 var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
 

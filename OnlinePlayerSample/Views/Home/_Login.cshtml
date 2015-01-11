@@ -1,15 +1,14 @@
 ﻿@model OnlinePlayerSample.Models.LoginModel
 @{
     ViewBag.Title = "Login";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+        //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true, "Login failed. Check your login details.");
-    <div>
-        <fieldset>
-            <legend>Login</legend>
+<div class="modal-body">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "Login failed. Check your login details.");
+        <div>
             <div class="editor-label">
                 @Html.LabelFor(u => u.UserName)
             </div>
@@ -28,7 +27,17 @@
                 @Html.CheckBoxFor(u => u.RememberMe)
                 @Html.LabelFor(u => u.RememberMe)
             </div>
-            <input type="submit" value="Log In" />
-        </fieldset>
-    </div>
-}
+            <input class="btn btn-default" type="submit" value="Log In" />
+
+        </div>
+    }
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#approve-btn').click(function () {
+            $('#modal-container').modal('hide');
+        });
+    });
+</script>
