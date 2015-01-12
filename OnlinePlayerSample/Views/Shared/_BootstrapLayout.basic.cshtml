@@ -24,7 +24,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="@Url.Action("Index", "Home")" id="navbar_title" title="SmartStreamer">SmartStreamer</a>
+
+                @*<a class="brand" href="@Url.Action("Index", "Home")" id="navbar_title" title="SmartStreamer">SmartStreamer</a>*@
+
+                <div class="dropdown" id="main_navbar_dropdown">
+                    <a class="dropdown-toggle brand" data-toggle="dropdown" aria-expanded="False" href="@Url.Action("Index", "Home")" id="navbar_title" title="SmartStreamer">
+                        <b class="caret"></b>
+                        SmartStreamer
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">Genres</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">Help</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">About</a></li>
+                    </ul>
+                </div>
+
                 <div class="nav-collapse collapse">
                     @Html.Navigation()
                 </div>
@@ -95,9 +110,9 @@
         @Html.Partial("_alerts")
         @Html.Partial("_validationSummary")
         @RenderBody()
-        
+
         <footer id="custom_footer">
-            
+
             @{
                 Html.RenderPartial("~/Views/Player/_FullWidthPlayer.cshtml");
             }
