@@ -127,7 +127,7 @@ body {
 }
 
 .player_div {
-    margin-top: 5%;
+    margin-top: 4%;
     width: 100%;
 }
 
@@ -162,7 +162,7 @@ body {
 
 .playlist_tiles {
     display: table;
-    margin: 5% auto 20px 5%;
+    margin: 3% auto 10px 5%;
 }
 
 .wrapper {
