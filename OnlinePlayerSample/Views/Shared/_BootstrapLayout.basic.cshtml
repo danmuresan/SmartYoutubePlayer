@@ -53,7 +53,7 @@
                                 <li>Entry 1</li>
                                 <li>Entry 2</li>
                                 <li>
-                                    <div style="display:none">
+                                    <div style="display: none">
                                         @Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logout_form" })
                                         {
                                             <input type="submit" value="Log Out">
@@ -95,8 +95,18 @@
         @Html.Partial("_alerts")
         @Html.Partial("_validationSummary")
         @RenderBody()
-        <hr>
+        
         <footer id="custom_footer">
+            @{
+                Html.RenderPartial("~/Views/Player/_FullWidthPlayer.cshtml");
+            }
+
+            <div id="playlist_box">
+                @{
+                    Html.RenderPartial("~/Views/Player/_HorizontalPlaylist.cshtml");
+                }
+            </div>
+            <hr>
             <p>&copy; SmartStreamer @System.DateTime.Now.ToString("yyyy") by barca_d - Powered by Grooveshark&copy</p>
         </footer>
     </div>
