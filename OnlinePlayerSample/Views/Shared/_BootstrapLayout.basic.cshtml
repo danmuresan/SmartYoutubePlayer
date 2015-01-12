@@ -97,6 +97,7 @@
         @RenderBody()
         
         <footer id="custom_footer">
+            
             @{
                 Html.RenderPartial("~/Views/Player/_FullWidthPlayer.cshtml");
             }
@@ -106,6 +107,7 @@
                     Html.RenderPartial("~/Views/Player/_HorizontalPlaylist.cshtml");
                 }
             </div>
+
             <hr>
             <p>&copy; SmartStreamer @System.DateTime.Now.ToString("yyyy") by barca_d - Powered by Grooveshark&copy</p>
         </footer>
