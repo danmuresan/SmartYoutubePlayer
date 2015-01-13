@@ -250,6 +250,11 @@ body {
     margin-left: 2px;
     border: 1px solid dimgrey;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.vid-item:hover {
+    background-color: #fff;
 }
 
 .thumb {
