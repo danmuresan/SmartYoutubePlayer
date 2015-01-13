@@ -1,51 +1,24 @@
-﻿<div class="horizontal_box">
-    <div class="vid-item">
-        <div class="thumb">
-            <img src="~/Content/themes/base/images/Desert.jpg">
-        </div>
-        <div class="desc">
-            Jessica Hernandez & the Deltas - Dead Brains
-        </div>
-    </div>
+﻿@model List<OnlinePlayerSample.Models.TrackViewModel>
 
-    <div class="vid-item">
-        <div class="thumb">
-            <img src="~/Content/themes/base/images/Chrysanthemum.jpg">
-        </div>
-        <div class="desc">
-            Coldplay - The Scientist
-        </div>
-    </div>
+@section Scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Helpers/HorizontalPlaylistTracksHelper.js")"></script>
+}
 
-    <div class="vid-item">
-        <div class="thumb">
-            <img src="~/Content/themes/base/images/Desert.jpg">
-        </div>
-        <div class="desc">
-            SomethingElse - Something
-        </div>
-    </div>
+<div class="horizontal_box">
 
-    <div class="vid-item">
-        <div class="thumb">
-            <img src="~/Content/themes/base/images/Chrysanthemum.jpg">
+    @foreach (var track in Model)
+    {
+        <div class="vid-item">
+            <div class="thumb">
+                <img src="@track.ImageUrl">
+            </div>
+            <div class="desc">
+                @track.TrackName
+            </div>
         </div>
-        <div class="desc">
-            La Roux - In For the Kill
-        </div>
-    </div>
+    }
 
-    <div class="vid-item">
-        <div class="thumb">
-            <img src="~/Content/themes/base/images/Desert.jpg">
-        </div>
-        <div class="desc">
-            La Roux - Quicksand
-        </div>
-    </div>
-
-
-@*    <div class="arrows">
+    @*    <div class="arrows">
         <div class="arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
         <div class="arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
     </div>*@

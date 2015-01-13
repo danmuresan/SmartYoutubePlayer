@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<OnlinePlayerSample.Models.TrackViewModel>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -16,24 +18,10 @@
 
     <div class="playlist_tiles">
         <ul class="wrapper">
-            <li class="box" draggable="true">1</li>
-            <li class="box" draggable="true">2</li>
-            <li class="box" draggable="true">3</li>
-            <li class="box" draggable="true">4</li>
-            <li class="box" draggable="true">5</li>
-            <li class="box" draggable="true">6</li>
-            <li class="box" draggable="true">7</li>
-            <li class="box" draggable="true">8</li>
-            <li class="box" draggable="true">9</li>
-            <li class="box" draggable="true">10</li>
-            <li class="box" draggable="true">11</li>
-            <li class="box" draggable="true">12</li>
-            <li class="box" draggable="true">13</li>
-            <li class="box" draggable="true">14</li>
-            <li class="box" draggable="true">15</li>
-            <li class="box" draggable="true">16</li>
-            <li class="box" draggable="true">17</li>
-            <li class="box" draggable="true">18</li>
+            @foreach (var track in Model)
+            {
+                <li class="box" draggable="true">@track.Id</li>
+            }
         </ul>
     </div>
 

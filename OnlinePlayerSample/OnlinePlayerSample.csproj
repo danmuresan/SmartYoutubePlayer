@@ -195,12 +195,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\YoutubeDemoController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\TrackViewModel.cs" />
     <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
     <Compile Include="NavigationRoutes\NamedRoute.cs" />
     <Compile Include="NavigationRoutes\NavigationExtensions.cs" />
@@ -384,6 +386,7 @@
     <Content Include="Scripts\Helpers\DragNDropHelper.js" />
     <Content Include="Scripts\Helpers\DragNDropToPlaylistHelper.js" />
     <Content Include="Scripts\Helpers\HorizontalPlaylistHelper.js" />
+    <Content Include="Scripts\Helpers\HorizontalPlaylistTracksHelper.js" />
     <Content Include="Scripts\Helpers\LoginModalHelper.js" />
     <Content Include="Scripts\Helpers\LogOutHelper.js" />
     <Content Include="Scripts\html5shiv.js" />

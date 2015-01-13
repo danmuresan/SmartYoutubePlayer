@@ -1,6 +1,7 @@
 @using System.Web.Optimization
 @using BootstrapSupport
 @using NavigationRoutes
+@using OnlinePlayerSample.Models
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,7 +99,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Login</h4>
             </div>
-            @{ Html.RenderPartial("~/Views/Home/_Login.cshtml"); }
+            @{ Html.RenderPartial("~/Views/Home/_Login.cshtml", new LoginModel()); }
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
@@ -114,12 +115,12 @@
         <footer id="custom_footer">
 
             @{
-                Html.RenderPartial("~/Views/Player/_FullWidthPlayer.cshtml");
+                Html.RenderAction("FullWidthPlayer", "Player", new { area = "" });
             }
 
             <div id="playlist_box">
                 @{
-                    Html.RenderPartial("~/Views/Player/_HorizontalPlaylist.cshtml");
+                    Html.RenderAction("HorizontalPlaylist", "Player", new { area = "" });
                 }
             </div>
 
