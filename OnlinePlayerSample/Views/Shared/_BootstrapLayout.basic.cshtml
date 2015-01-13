@@ -65,8 +65,8 @@
                                 @Html.Encode(User.Identity.Name)&nbsp;&nbsp;<b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li>Entry 1</li>
-                                <li>Entry 2</li>
+                                <li>Profile Info</li>
+                                <li><a href="@Url.Action("Manage", "Account")">Update Profile</a></li>
                                 <li>
                                     <div style="display: none">
                                         @Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logout_form" })

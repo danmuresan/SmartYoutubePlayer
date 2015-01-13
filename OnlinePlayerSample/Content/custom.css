@@ -56,6 +56,23 @@ body {
         margin-top: 5px;
     }
 
+
+#manage_account_container {
+    color: #f5f5f5;
+}
+
+    #manage_account_container legend {
+        color: #fffff0;
+    }
+
+    #manage_account_container h1 h2 {
+        color: #fffff0;
+    }
+
+    #manage_account_container .field-validation-error {
+        color: #F5CECE;
+    }
+
 #login_container {
     color: #f5f5f5;
 }
