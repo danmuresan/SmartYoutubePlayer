@@ -367,7 +367,9 @@ body {
     font-weight: bold;
     left: 15%;
     right: 15%;
-    top: 60%;
+    top: 10%;
+    bottom: 5%;
+    overflow: hidden;
 }
 
 .box header {
