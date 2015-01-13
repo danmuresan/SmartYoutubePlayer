@@ -325,6 +325,7 @@
     <Content Include="Content\themes\base\images\Chrysanthemum.jpg" />
     <Content Include="Content\themes\base\images\default_icon_24x24.png" />
     <Content Include="Content\themes\base\images\Desert.jpg" />
+    <Content Include="Content\themes\base\images\track_img.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

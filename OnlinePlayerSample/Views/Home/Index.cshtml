@@ -20,7 +20,10 @@
         <ul class="wrapper">
             @foreach (var track in Model)
             {
-                <li class="box" draggable="true">@track.Id</li>
+                <li class="box" draggable="true">
+                    <img src="@track.ImageUrl">
+                    <p>@track.TrackName (@track.Id)</p>
+                </li>
             }
         </ul>
     </div>

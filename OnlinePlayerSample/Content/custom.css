@@ -351,7 +351,26 @@ body {
     cursor: move;
 }
 
-    .box header {
+.box img {
+    width: 100%;
+    height: 100%;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.box p {
+    z-index: 100;
+    position: absolute;
+    color: #000000;
+    font-size: 1.2em;
+    font-weight: bold;
+    left: 15%;
+    right: 15%;
+    top: 60%;
+}
+
+.box header {
         color: #fff;
         text-shadow: #000 0 1px;
         box-shadow: 5px;
