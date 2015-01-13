@@ -385,6 +385,7 @@
     <Content Include="Scripts\Helpers\DragNDropToPlaylistHelper.js" />
     <Content Include="Scripts\Helpers\HorizontalPlaylistHelper.js" />
     <Content Include="Scripts\Helpers\LoginModalHelper.js" />
+    <Content Include="Scripts\Helpers\LogOutHelper.js" />
     <Content Include="Scripts\html5shiv.js" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
