@@ -8,8 +8,11 @@ for (var i = 0; i < links.length; i++) {
     el.setAttribute('draggable', 'true');
 
     el.addEventListener('dragstart', function (e) {
+        var id = $(this).attr('id');
+
         e.dataTransfer.effectAllowed = 'copy'; // only dropEffect='copy' will be dropable
         e.dataTransfer.setData('Text', this.innerHTML); // required otherwise doesn't work
+        e.dataTransfer.setData('Source', id);
     }, false);
 }
 
@@ -35,22 +38,24 @@ bin.addEventListener('dragleave', function () {
 bin.addEventListener('drop', function (e) {
     if (e.stopPropagation) e.stopPropagation(); // stops the browser from redirecting...why???
 
-    var elementText = e.dataTransfer.getData('Text');
-    var el = document.getElementById(elementText);
+    var elementTextRough = '<div class="thumb">' + e.dataTransfer.getData('Text');
+    elementTextRough = elementTextRough.replace('<p>', '</div><div class="desc">');
+    var elementText = elementTextRough.replace('</p>', '</div>');
+    var elementId = e.dataTransfer.getData('Source');
 
     // stupid nom text + fade effect
     bin.className = '';
 
-    if ($('.horizontal_box > #track' + elementText).length == 0) {
+    if ($('.horizontal_box > #' + elementId).length == 0) {
         console.log('Track ' + elementText + ' added to playlist...');
-        $('.horizontal_box').append("<div class='vid-item' id='track" + elementText + "'><div class='thumb'><img src='Content/themes/base/images/Desert.jpg'></div><div class='desc'>Track no. " + elementText + "</div></div>");
+        $('.horizontal_box').append("<div class='vid-item' id='" + elementId + "'>" + elementText + "</div>");
     }
     else {
         console.log('Track ' + elementText + ' already exists in playlist');
     }
 
-    var elementNode = $('.horizontal_box > #track' + elementText).get(0);
-    $(elementNode).css('opacity', '0.5').show().animate({ opacity: 1 }, 250, 'linear');
+    var elementNode = $('.horizontal_box > #' + elementId).get(0);
+    $(elementNode).css('opacity', '0.5').show().animate({ opacity: 1 }, 100, 'linear');
 
 
     return false;

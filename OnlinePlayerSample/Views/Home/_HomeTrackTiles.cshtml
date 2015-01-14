@@ -1,11 +1,16 @@
-﻿<div class="playlist_tiles">
+﻿@{
+    int count = 1;
+}
+
+<div class="playlist_tiles">
     <ul class="wrapper">
         @foreach (var track in Model)
         {
-            <li class="box" draggable="true">
+            <li class="box" draggable="true" id="track_@count">
                 <img src="@track.ImageUrl">
                 <p>@track.TrackName (@track.Id)</p>
             </li>
+            count++;
         }
     </ul>
 </div>
