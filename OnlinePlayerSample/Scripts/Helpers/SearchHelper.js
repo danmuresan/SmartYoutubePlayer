@@ -23,9 +23,10 @@ var postAjaxForm = function(form) {
                 var responseHtml = '<div id="search_results_container"><ul id="search_results_track_list">';
                 
                 for (var i = 0; i < response.length; i++) {
-                    responseHtml += '<li>';
-                    responseHtml += response[i].TrackName;
-                    responseHtml += '</li>';
+                    responseHtml += '<li class="search_list_item"><div class="search_item">';
+                    responseHtml += '<img src=' + response[i].ImageUrl + '>';
+                    responseHtml += '<div class="search_item_content">' + '<h2>' + response[i].TrackName + '</h2><h3>' + response[i].Description + '</h3><div class="search_item_stats">Rating and stats here...</div></div>';
+                    responseHtml += '</div></li>';
                 }
 
                 responseHtml += '</ul></div>';
@@ -33,7 +34,7 @@ var postAjaxForm = function(form) {
                 if (response.redirect) {
                     window.location = response.redirectUrl;
                 } else {
-                    // how to do update('@{Html.RenderPartial("~/Views/Tracks/_SearchedTrackList.cshtml")}') ???
+                    // how to do update more elegantly instead of building html by hand ('@{Html.RenderPartial("~/Views/Tracks/_SearchedTrackList.cshtml")}') ???
                     $(updateElement).html(responseHtml);
                     $.validator.unobtrusive.parse($(updateElement).find('form'));
                 }

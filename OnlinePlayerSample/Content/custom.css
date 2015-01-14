@@ -395,3 +395,37 @@ body {
     .box.over {
         border: 2px dashed #000;
     }
+
+#search_results_container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5px;
+}
+
+#search_results_container h2 {
+    font-size: 2em;
+}
+
+#search_results_container h3 {
+    font-size: 1.3em;
+}
+
+#search_results_container .search_list_item {
+    list-style: none;
+    margin-bottom: 3%;
+    margin-top: 1%;
+}
+
+#search_results_container .search_item {
+    display: inline-flex;
+    display: -ms-webkit-box;
+}
+
+#search_results_container .search_item img {
+    height: 130px;
+    width: 130px;
+}
+
+#search_results_container .search_item_content {
+    margin-left: 15px;
+}
