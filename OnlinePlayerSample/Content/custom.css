@@ -427,16 +427,16 @@ body {
     border-radius: 5px;
     background-color: #b5bdc8;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding-left: 5px;
     cursor: pointer;
 }
 
-#search_filter_menu_section .search_filter_menu_item a {
+#search_filter_menu_section .search_filter_menu_item {
     color: black;
 }
 
-#search_filter_menu_section .search_filter_menu_item a:hover {
+#search_filter_menu_section .search_filter_menu_item_link {
     text-decoration: none;
 }
 

@@ -29,9 +29,9 @@ var postAjaxForm = function(form) {
                 var responseHtml = '<section id="search_filter_menu_section"><h2>Filter</h2><ul class="search_filter_menu">';
                 var menuItemsArray = createFilterMenuArray();
                 for (var i = 0; i < menuItemsArray.length - 1; i++) {
-                    responseHtml += '<li class="search_filter_menu_item"><a class="search_filter_menu_item_link" href="#">' + menuItemsArray[i] + '</a></li>';
+                    responseHtml += '<a class="search_filter_menu_item_link" href="#"><li class="search_filter_menu_item">' + menuItemsArray[i] + '</li></a>';
                 }
-                responseHtml += '<li class="search_filter_menu_item" id="search_filter_menu_item_last"><a class="search_filter_menu_item_link" href="#">' + menuItemsArray[menuItemsArray.length - 1] + '</a></li>';
+                responseHtml += '<a class="search_filter_menu_item_link" href="#"><li class="search_filter_menu_item" id="search_filter_menu_item_last">' + menuItemsArray[menuItemsArray.length - 1] + '</li></a>';
                 responseHtml += '</ul></section>';
 
 
