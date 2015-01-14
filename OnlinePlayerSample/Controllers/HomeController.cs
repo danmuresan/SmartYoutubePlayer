@@ -153,7 +153,7 @@ namespace OnlinePlayerSample.Controllers
         public ActionResult SearchWithRefresh(string searchString)
         {
             var trackModelList = FilterTracks(searchString);
-            return View(trackModelList);
+            return View("Index", trackModelList);
         }
 
         //public ActionResult SearchWithRefresh(string searchString)
