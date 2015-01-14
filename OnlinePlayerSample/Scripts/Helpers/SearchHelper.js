@@ -25,7 +25,7 @@ var postAjaxForm = function(form) {
                 for (var i = 0; i < response.length; i++) {
                     responseHtml += '<li class="search_list_item"><div class="search_item">';
                     responseHtml += '<img src=' + response[i].ImageUrl + '>';
-                    responseHtml += '<div class="search_item_content">' + '<h2>' + response[i].TrackName + '</h2><h3>' + response[i].Description + '</h3><div class="search_item_stats">Rating and stats here...</div></div>';
+                    responseHtml += '<div class="search_item_content">' + '<h2>' + response[i].TrackName + '</h2><h3>' + response[i].TrackDescription + '</h3><div class="search_item_stats">Rating and stats here...</div></div>';
                     responseHtml += '</div></li>';
                 }
 

@@ -431,11 +431,19 @@ body {
 #search_results_container .search_item {
     display: inline-flex;
     display: -ms-webkit-box;
+    width: 100%;
+}
+
+#search_results_container .search_item:hover {
+    background-color: #b5bdc8;
+    opacity: 0.9;
+    cursor: default;
 }
 
 #search_results_container .search_item img {
     height: 130px;
     width: 130px;
+    border: 1px solid #777777;
 }
 
 #search_results_container .search_item_content {
