@@ -396,18 +396,30 @@ body {
         border: 2px dashed #000;
     }
 
+/* Search list result design */
+#search_results_track_list {
+    margin-left: 6%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
 #search_results_container {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     padding: 5px;
 }
 
 #search_results_container h2 {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 #search_results_container h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#search_results_container .search_item_stats {
+    font-style: italic;
 }
 
 #search_results_container .search_list_item {
