@@ -3,6 +3,11 @@
     postAjaxForm(e.target);
 });
 
+function createFilterMenuArray() {
+    var menuItemsArray = ['foo', 'bar', 'foobar', 'haha'];
+    return menuItemsArray;
+}
+
 var postAjaxForm = function(form) {
     var updateElement = $('#main_track_tiles_container');
 
@@ -20,8 +25,17 @@ var postAjaxForm = function(form) {
             success: function(response) {
 
                 console.log(response);
-                var responseHtml = '<div id="search_results_container"><ul id="search_results_track_list">';
-                
+
+                var responseHtml = '<section id="search_filter_menu_section"><h2>Filter</h2><ul class="search_filter_menu">';
+                var menuItemsArray = createFilterMenuArray();
+                for (var i = 0; i < menuItemsArray.length; i++) {
+                    responseHtml += '<li class="search_filter_menu_item"><a class="search_filter_menu_item_link" href="#">' + menuItemsArray[i] + '</a></li>';
+                }
+                responseHtml += '</ul></section>';
+
+
+                responseHtml += '<section id="search_results_section"><div id="search_results_container"><ul id="search_results_track_list">';
+
                 for (var i = 0; i < response.length; i++) {
                     responseHtml += '<li class="search_list_item"><div class="search_item">';
                     responseHtml += '<img src=' + response[i].ImageUrl + '>';
@@ -29,7 +43,7 @@ var postAjaxForm = function(form) {
                     responseHtml += '</div></li>';
                 }
 
-                responseHtml += '</ul></div>';
+                responseHtml += '</ul></div></section>';
 
                 if (response.redirect) {
                     window.location = response.redirectUrl;
