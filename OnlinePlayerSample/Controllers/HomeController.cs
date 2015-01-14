@@ -143,12 +143,23 @@ namespace OnlinePlayerSample.Controllers
             return PartialView("_Login");
         }
 
-        public ActionResult SearchWithRefresh(string searchString)
+        public List<TrackViewModel> FilterTracks(string searchString)
         {
             if (searchString == null) searchString = string.Empty;
             var mockedTracksList = RetrieveHomePageTracks();
-            var filteredTracks = mockedTracksList.Where(track => track.TrackName.Contains(searchString) || track.TrackDescription.Contains(searchString)).ToList();
-            return PartialView("~/Views/Tracks/_SearchedTrackList.cshtml", filteredTracks);
+            return mockedTracksList.Where(track => track.TrackName.Contains(searchString) || track.TrackDescription.Contains(searchString)).ToList();
         }
+
+        public ActionResult SearchWithRefresh(string searchString)
+        {
+            var trackModelList = FilterTracks(searchString);
+            return View(trackModelList);
+        }
+
+        //public ActionResult SearchWithRefresh(string searchString)
+        //{
+        //    FilterTracks(searchString);
+        //    return PartialView("~/Views/Tracks/_SearchedTrackList.cshtml", filteredTracks);
+        //}
     }
 }
