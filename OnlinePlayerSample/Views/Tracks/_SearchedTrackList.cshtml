@@ -1,0 +1,12 @@
+﻿@model List<OnlinePlayerSample.Models.TrackViewModel>
+
+<div id="search_results_container">
+
+    <ul id="search_results_track_list">
+        @foreach (var track in Model)
+        {
+            <li>@track.TrackName</li>
+        }
+    </ul>
+
+</div>

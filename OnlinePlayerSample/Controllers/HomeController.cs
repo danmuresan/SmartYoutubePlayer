@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Web.Mvc;
 using OnlinePlayerSample.Models;
 using System.Collections.Generic;
@@ -140,6 +141,14 @@ namespace OnlinePlayerSample.Controllers
         public ActionResult Login()
         {
             return PartialView("_Login");
+        }
+
+        public ActionResult SearchWithRefresh(string searchString)
+        {
+            if (searchString == null) searchString = string.Empty;
+            var mockedTracksList = RetrieveHomePageTracks();
+            var filteredTracks = mockedTracksList.Where(track => track.TrackName.Contains(searchString) || track.TrackDescription.Contains(searchString)).ToList();
+            return PartialView("~/Views/Tracks/_SearchedTrackList.cshtml", filteredTracks);
         }
     }
 }

@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="col-sm-3 col-md-3 pull-left">
-                    <form class="navbar-form" id="navbar_search_form" role="search">
+                    <form action="/Home/SearchWithRefresh" method="get" class="navbar-form" id="navbar_search_form" role="search">
                         <div class="input-group" id="navbar_search_container">
                             <input type="text" class="form-control" placeholder="Search" name="q">
                             <div class="input-group-btn">
@@ -54,6 +54,15 @@
                             </div>
                         </div>
                     </form>
+                   @* @Html.BeginForm("SearchWithRefresh", "Home", FormMethod.Get, new { @id = "navbar_search_form", @class = "navbar-form", @role = "search" })
+                    {
+	                    <div class="input-group" id="navbar_search_container">
+                            <input type="text" class="form-control" placeholder="Search" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="icon-search"></i></button>
+                            </div>
+                        </div>
+                    }*@
                 </div>
 
                 <div class="pull-right nav-collapse collapse" id="navbar_btn_container">
