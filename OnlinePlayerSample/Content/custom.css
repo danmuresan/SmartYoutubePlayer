@@ -416,6 +416,37 @@ body {
 
 #search_filter_menu_section ul {
     list-style: none;
+    margin: 0;
+}
+
+#search_filter_menu_section .search_filter_menu_item {
+    line-height: 2.5;
+    border-top: 1px solid #777777;
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+    border-radius: 5px;
+    background-color: #b5bdc8;
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+#search_filter_menu_section .search_filter_menu_item a {
+    color: black;
+}
+
+#search_filter_menu_section .search_filter_menu_item a:hover {
+    text-decoration: none;
+}
+
+#search_filter_menu_section #search_filter_menu_item_last {
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+#search_filter_menu_section .search_filter_menu_item:hover {
+    background-color: #fff;
 }
 
 #search_results_track_list {
