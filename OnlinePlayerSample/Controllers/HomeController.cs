@@ -150,6 +150,12 @@ namespace OnlinePlayerSample.Controllers
             return mockedTracksList.Where(track => track.TrackName.Contains(searchString) || track.TrackDescription.Contains(searchString)).ToList();
         }
 
+        public JsonResult SearchAsynchrounously(string searchString)
+        {
+            var trackModelList = FilterTracks(searchString);
+            return Json(trackModelList, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult SearchWithRefresh(string searchString)
         {
             var trackModelList = FilterTracks(searchString);

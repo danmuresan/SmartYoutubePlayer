@@ -1,0 +1,11 @@
+﻿<div class="playlist_tiles">
+    <ul class="wrapper">
+        @foreach (var track in Model)
+        {
+            <li class="box" draggable="true">
+                <img src="@track.ImageUrl">
+                <p>@track.TrackName (@track.Id)</p>
+            </li>
+        }
+    </ul>
+</div>
