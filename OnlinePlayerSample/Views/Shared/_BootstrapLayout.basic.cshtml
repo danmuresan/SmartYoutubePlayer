@@ -138,8 +138,11 @@
         </footer>
     </div>
     @Scripts.Render("~/js")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/Scripts/Helpers/LoginModalHelper.js")
     @Scripts.Render("~/Scripts/Helpers/LogOutHelper.js")
+    @Scripts.Render("~/Scripts/Helpers/SearchHelper.js")
+    @Scripts.Render("~/Scripts/Helpers/SearchAutocompleteHelper.js")
     @RenderSection("Scripts", required: false)
 </body>
 </html>
