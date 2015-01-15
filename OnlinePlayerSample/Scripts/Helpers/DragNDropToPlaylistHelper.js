@@ -49,6 +49,7 @@ bin.addEventListener('drop', function (e) {
     if ($('.horizontal_box > #' + elementId).length == 0) {
         console.log('Track ' + elementText + ' added to playlist...');
         $('.horizontal_box').append("<div class='vid-item' id='" + elementId + "'>" + elementText + "</div>");
+        addTrackToPlaylist(elementId);
     }
     else {
         console.log('Track ' + elementText + ' already exists in playlist');
@@ -60,3 +61,25 @@ bin.addEventListener('drop', function (e) {
 
     return false;
 }, false);
+
+function addTrackToPlaylist(elementMarkupId) {
+    var elementId = elementMarkupId.replace(/[^\d.]/g, '');
+    
+    $.ajax({
+        url: '/Player/GetTrackById',
+        type: "GET",
+        dataType: "json",
+        data: { trackId: elementId },
+        success: function (data) {
+            console.log(data);
+            var trackName = data.TrackName;
+            var trackUrl = data.TrackStreamUrl;
+            var trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
+            $('#full_width_player .sm2-playlist-bd').append(trackListItemHtml);
+        },
+        error: function (xhr, stats, errorMessage) {
+            alert('Error retrieving track with Id: ' + elementId);
+            console.log(errorMessage + ' (Error getting track Id: ' + elementId + ')');
+        }
+    });
+}

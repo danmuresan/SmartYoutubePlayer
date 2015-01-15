@@ -20,6 +20,15 @@ namespace OnlinePlayerSample.Controllers
             return PartialView("_FullWidthPlayer", playlistTracks);
         }
 
+        public JsonResult GetTrackById(int trackId)
+        {
+            var mockupTracks = RetrieveMockedPlaylistTracks();
+
+            var trackToRetrieve = mockupTracks.Find(track => track.Id == trackId);
+
+            return Json(trackToRetrieve, JsonRequestBehavior.AllowGet);
+        }
+
         private List<TrackViewModel> RetrieveMockedPlaylistTracks()
         {
             // Mock up 10 tracks for now
