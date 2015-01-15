@@ -88,6 +88,15 @@ namespace OnlinePlayerSample.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class ProfileInfoModel
+    {
+        [Display(Name = "Avatar")]
+        public string ProfilePictureUrl { get; set; }
+
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+    }
+
     public class ExternalLogin
     {
         public string Provider { get; set; }

@@ -122,6 +122,54 @@ namespace OnlinePlayerSample.Controllers
             return RedirectToAction("Manage", new { Message = message });
         }
 
+
+        public ActionResult ManageProfileInfo(ManageMessageId? message)
+        {
+            // TODO: set message here
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ManageProfileInfo(ProfileInfoModel model)
+        {
+            bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+            ViewBag.HasLocalPassword = hasLocalAccount;
+            ViewBag.ReturnUrl = Url.Action("ManageProfileInfo");
+
+            if (hasLocalAccount)
+            {
+                if (ModelState.IsValid)
+                {
+                    // ChangePassword will throw an exception rather than return false in certain failure scenarios.
+                    bool updateSucceeded = true;
+                    try
+                    {
+                        // try update
+                    }
+                    catch (Exception)
+                    {
+                        updateSucceeded = false;
+                    }
+
+                    if (updateSucceeded)
+                    {
+                        return RedirectToAction("ManageProfileInfo", new { Message = "Profile updated successfully." });
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Something went wrong while updating the profile. Please try again.");
+                    }
+                }
+            }
+            else
+            {
+                // handle the case of not having a local account if necessary
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
         //
         // GET: /Account/Manage
 

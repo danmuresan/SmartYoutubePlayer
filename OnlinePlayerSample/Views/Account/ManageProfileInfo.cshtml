@@ -1,0 +1,50 @@
+﻿@model OnlinePlayerSample.Models.ProfileInfoModel
+
+@{
+    ViewBag.Title = "Manage Profile";
+}
+
+<h2>Manage Profile</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ProfileInfoModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProfilePictureUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProfilePictureUrl)
+            @Html.ValidationMessageFor(model => model.ProfilePictureUrl)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div class="row span5">
+    <div class="span8">
+        @Html.ActionLink("Change password", "Manage", "Account", null, new { @class = "btn btn-primary" })
+    </div>
+    <div class="span4">
+        @Html.ActionLink("Back to List", "Index", "Home", null, new { @class = "btn btn-default" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
