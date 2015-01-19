@@ -6,13 +6,12 @@
 
 <h2>Manage Profile</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("ManageProfileInfo", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>ProfileInfoModel</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.UserName)
@@ -23,26 +22,37 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProfilePictureUrl)
+            @Html.LabelFor(model => model.ProfilePicture)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ProfilePictureUrl)
-            @Html.ValidationMessageFor(model => model.ProfilePictureUrl)
+            <span class="btn btn-warning btn-file">
+                Upload Avatar Image
+                <input type="file" name="ProfilePicture" />
+            </span>
+            @Html.ValidationMessageFor(model => model.ProfilePicture)
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input class="btn btn-primary" type="submit" value="Save" />
         </p>
     </fieldset>
 }
 
-<div class="row span5">
-    <div class="span8">
-        @Html.ActionLink("Change password", "Manage", "Account", null, new { @class = "btn btn-primary" })
+<div class="btn_group_container">
+
+    <div class="btn-group inline pull-left">
+        <a href="@Url.Action("Manage", "Account")">
+            <div class="btn btn-primary">
+                Change password
+            </div>
+        </a>
+        <a href="@Url.Action("Index", "Home")">
+            <div class="btn btn-default">
+                Back to List
+            </div>
+        </a>
     </div>
-    <div class="span4">
-        @Html.ActionLink("Back to List", "Index", "Home", null, new { @class = "btn btn-default" })
-    </div>
+
 </div>
 
 @section Scripts {

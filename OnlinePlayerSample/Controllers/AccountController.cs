@@ -145,6 +145,10 @@ namespace OnlinePlayerSample.Controllers
                     try
                     {
                         // try update
+                        if (model.ProfilePicture.ContentLength > 0)
+                        {
+                            //var fileName
+                        }
                     }
                     catch (Exception)
                     {

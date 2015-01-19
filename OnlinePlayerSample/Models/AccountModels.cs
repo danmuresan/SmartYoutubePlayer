@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
+using System.Web;
 using System.Web.Security;
 
 namespace OnlinePlayerSample.Models
@@ -91,7 +92,7 @@ namespace OnlinePlayerSample.Models
     public class ProfileInfoModel
     {
         [Display(Name = "Avatar")]
-        public string ProfilePictureUrl { get; set; }
+        public HttpPostedFileBase ProfilePicture { get; set; }
 
         [Display(Name = "User name")]
         public string UserName { get; set; }
