@@ -137,10 +137,9 @@ function playAll(filteredList) {
             selectedToPlayNext = true;
         }
         
+        // add track to playlist (and mark the first track as selected)
         addTracksToPlaylist(elementId, selectedToPlayNext);
     }
-    
-
 }
 
 function addTracksToPlaylist(elementId, selectedToPlayNext) {
