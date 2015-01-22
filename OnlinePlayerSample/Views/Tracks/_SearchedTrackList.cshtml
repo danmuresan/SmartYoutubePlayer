@@ -1,12 +1,32 @@
 ﻿@model List<OnlinePlayerSample.Models.TrackViewModel>
 
-<div id="search_results_container">
 
-    <ul id="search_results_track_list">
-        @foreach (var track in Model)
-        {
-            <li>@track.TrackName</li>
-        }
+<section id="search_filter_menu_section">
+    <h2>Filter</h2>
+    <ul class="search_filter_menu">
+        <a class="search_filter_menu_item_link" href="#">
+            <li class="search_filter_menu_item">Foo</li>
+        </a>
+        <a class="search_filter_menu_item_link" href="#">
+            <li class="search_filter_menu_item">Bar</li>
+        </a>
+        <a class="search_filter_menu_item_link" href="#">
+            <li class="search_filter_menu_item">FooBar</li>
+        </a>
+        <a class="search_filter_menu_item_link" href="#">
+            <li class="search_filter_menu_item" id="search_filter_menu_item_last">Haha</li>
+        </a>
     </ul>
+</section>
+<section id="search_results_section">
+    <div id="search_results_container">
 
-</div>
+        <ul id="search_results_track_list">
+            @foreach (var track in Model)
+            {
+                <li>@track.TrackName</li>
+            }
+        </ul>
+
+    </div>
+</section>

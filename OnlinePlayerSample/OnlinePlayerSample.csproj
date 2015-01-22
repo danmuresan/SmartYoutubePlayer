@@ -477,6 +477,7 @@
     <Content Include="Views\Tracks\_SearchedTrackList.cshtml" />
     <Content Include="Views\Home\_HomeTrackTiles.cshtml" />
     <Content Include="Views\Account\ManageProfileInfo.cshtml" />
+    <Content Include="Views\Tracks\_SearchResultPlayBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

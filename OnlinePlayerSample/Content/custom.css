@@ -440,6 +440,10 @@ body {
     cursor: pointer;
 }
 
+#search_filter_menu_section {
+    margin-bottom: 3%;
+}
+
 #search_filter_menu_section .search_filter_menu_item {
     color: black;
 }

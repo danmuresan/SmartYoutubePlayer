@@ -29,6 +29,11 @@ namespace OnlinePlayerSample.Controllers
             return Json(trackToRetrieve, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult GetTrackToolbar()
+        {
+            return PartialView("~/Views/Tracks/_SearchResultPlayBar.cshtml");
+        }
+
         private List<TrackViewModel> RetrieveMockedPlaylistTracks()
         {
             // Mock up 10 tracks for now
