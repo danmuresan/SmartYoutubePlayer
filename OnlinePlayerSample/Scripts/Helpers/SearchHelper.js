@@ -1,6 +1,8 @@
 ﻿$(document).on('submit', '#navbar_search_form', function (e) {
     e.preventDefault();
     postAjaxForm(e.target);
+
+
 });
 
 function createFilterMenuArray() {
@@ -77,6 +79,14 @@ var postAjaxForm = function(form) {
                         $(updateElement).html(responseHtml);
                         $.validator.unobtrusive.parse($(updateElement).find('form'));
                     }
+                    
+                    // register filter menu actions
+                    $('.search_filter_menu_item_link:first-child').addClass('active');
+                    registerFilterMenuClicks();
+
+                    // register PlayAll button click
+                    registerPlayAllButtonClick();
+
                 },
                 error: function (xhr, stats, errorMessage) {
                     alert('Error loading homepage tracks...');
@@ -90,3 +100,24 @@ var postAjaxForm = function(form) {
     return true;
 };
 
+function registerFilterMenuClicks() {
+    $('.search_filter_menu_item_link').click(function () {
+        
+        //remove old active class
+        $('.search_filter_menu_item_link').removeClass('active');
+        
+        // setup new active class
+        $(this).addClass('active');
+        
+    });
+}
+
+function registerPlayAllButtonClick() {
+    $('#search_toolbar_playall').click(function () {
+        playAll();
+    });
+}
+
+function playAll() {
+    console.log('Begin play all searched tracks...');
+}
