@@ -43,7 +43,6 @@ bin.addEventListener('drop', function (e) {
     var elementText = elementTextRough.replace('</p>', '</div>');
     var elementId = e.dataTransfer.getData('Source');
 
-    // stupid nom text + fade effect
     bin.className = '';
 
     if ($('.horizontal_box > #' + elementId).length == 0) {
@@ -75,7 +74,7 @@ function addTrackToPlaylist(elementMarkupId) {
             var trackName = data.TrackName;
             var trackUrl = data.TrackStreamUrl;
             var trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
-            $('#full_width_player .sm2-playlist-bd').append(trackListItemHtml);
+            $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
         },
         error: function (xhr, stats, errorMessage) {
             alert('Error retrieving track with Id: ' + elementId);

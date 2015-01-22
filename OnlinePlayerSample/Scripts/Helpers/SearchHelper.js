@@ -10,7 +10,7 @@ function createFilterMenuArray() {
     return menuItemsArray;
 }
 
-var postAjaxForm = function(form) {
+var postAjaxForm = function (form) {
     var updateElement = $('#main_track_tiles_container');
 
     if (!$(updateElement).length) {
@@ -25,11 +25,11 @@ var postAjaxForm = function(form) {
     $.ajax({
         type: 'GET',
         url: "/Player/GetTrackToolbar",
-        success: function(response) {
+        success: function (response) {
             playBar = response;
         }
     }).done(function () {
-        
+
         // on complete of get request for static partial view, retrieve the actual data via another GET ajax call with form submit
         if ($(form).valid()) {
             $.ajax({
@@ -79,13 +79,16 @@ var postAjaxForm = function(form) {
                         $(updateElement).html(responseHtml);
                         $.validator.unobtrusive.parse($(updateElement).find('form'));
                     }
-                    
+
                     // register filter menu actions
                     $('.search_filter_menu_item_link:first-child').addClass('active');
                     registerFilterMenuClicks();
 
+                    // filter tracks according to the menu entry
+                    var filteredList = response;
+
                     // register PlayAll button click
-                    registerPlayAllButtonClick();
+                    registerPlayAllButtonClick(filteredList);
 
                 },
                 error: function (xhr, stats, errorMessage) {
@@ -94,7 +97,7 @@ var postAjaxForm = function(form) {
                 }
             });
         }
-        
+
     });
 
     return true;
@@ -102,22 +105,70 @@ var postAjaxForm = function(form) {
 
 function registerFilterMenuClicks() {
     $('.search_filter_menu_item_link').click(function () {
-        
+
         //remove old active class
         $('.search_filter_menu_item_link').removeClass('active');
-        
+
         // setup new active class
         $(this).addClass('active');
-        
+
     });
 }
 
-function registerPlayAllButtonClick() {
+function registerPlayAllButtonClick(filteredList) {
+
     $('#search_toolbar_playall').click(function () {
-        playAll();
+        playAll(filteredList);
     });
 }
 
-function playAll() {
+function playAll(filteredList) {
+    
     console.log('Begin play all searched tracks...');
+
+    for (var i = 0; i < filteredList.length; i++) {
+        var elementId = filteredList[i].Id;
+        var elementText = filteredList[i].TrackName;
+        $('.horizontal_box').append("<div class='vid-item' id='track_" + elementId + "'>" + elementText + "</div>");
+        
+        // set first track of the search list as the next to play
+        var selectedToPlayNext = false;
+        if (i == 0) {
+            selectedToPlayNext = true;
+        }
+        
+        addTracksToPlaylist(elementId, selectedToPlayNext);
+    }
+    
+
+}
+
+function addTracksToPlaylist(elementId, selectedToPlayNext) {
+
+    $.ajax({
+        url: '/Player/GetTrackById',
+        type: "GET",
+        dataType: "json",
+        data: { trackId: elementId },
+        success: function (data) {
+            console.log(data);
+            var trackName = data.TrackName;
+            var trackUrl = data.TrackStreamUrl;
+
+            var trackListItemHtml = '';
+
+            if (selectedToPlayNext) {
+                $('.sm2-playlist-bd li').removeClass('selected');
+                trackListItemHtml = '<li class="selected"><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
+            } else {
+                trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
+            }
+            
+            $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
+        },
+        error: function (xhr, stats, errorMessage) {
+            alert('Error retrieving track with Id: ' + elementId);
+            console.log(errorMessage + ' (Error getting track Id: ' + elementId + ')');
+        }
+    });
 }
