@@ -1,8 +1,8 @@
 ﻿<div id="grid_toolbar_container">
-    <div class="grid_toolbar">
+    <div class="grid_toolbar row-fluid">
         <ul class="container-fluid primary_actions pull-left">
             <li>
-                <div class="btn-group">
+                <div class="btn-group inline">
                     <a class="btn play_btn" href="#playall">
                         <i class="icon-play"></i>
                         Play All
@@ -21,8 +21,22 @@
             </li>
         </ul>
         <ul class="container-fluid secondary_actions pull-right">
-            <li>Sorting Options DropDown</li>
-            <li>Custom Filter SearchBox</li>
+            <li>
+                <div class="btn-group">
+                    <a class="dropdown btn sort_btn" href="#sort">
+                        <span class="caret"></span>
+                        Sort
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div id="mini_filter_box" class="input-group">
+                    <input class="input-small" type="text" class="form-control" placeholder="filter" aria-describedby="custom_filter">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="icon-search"></i></button>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </div>

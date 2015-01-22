@@ -19,9 +19,9 @@ body {
     margin-bottom: 7%;
 }
 
-.btn_group_container .btn {
-    margin-right: 3%;
-}
+    .btn_group_container .btn {
+        margin-right: 3%;
+    }
 
 /*Dropdown expand on hover trick*/
 .dropdown:hover > ul.dropdown-menu {
@@ -262,9 +262,9 @@ body {
     cursor: pointer;
 }
 
-.vid-item:hover {
-    background-color: #fff;
-}
+    .vid-item:hover {
+        background-color: #fff;
+    }
 
 .thumb {
     overflow: hidden;
@@ -359,28 +359,28 @@ body {
     cursor: move;
 }
 
-.box img {
-    width: 100%;
-    height: 100%;
-    -ms-border-radius: 10px;
-    border-radius: 10px;
-    opacity: 0.8;
-}
+    .box img {
+        width: 100%;
+        height: 100%;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        opacity: 0.8;
+    }
 
-.box p {
-    z-index: 100;
-    position: absolute;
-    color: #000000;
-    font-size: 1.2em;
-    font-weight: bold;
-    left: 15%;
-    right: 15%;
-    top: 10%;
-    bottom: 5%;
-    overflow: hidden;
-}
+    .box p {
+        z-index: 100;
+        position: absolute;
+        color: #000000;
+        font-size: 1.2em;
+        font-weight: bold;
+        left: 15%;
+        right: 15%;
+        top: 10%;
+        bottom: 5%;
+        overflow: hidden;
+    }
 
-.box header {
+    .box header {
         color: #fff;
         text-shadow: #000 0 1px;
         box-shadow: 5px;
@@ -408,7 +408,7 @@ body {
 
 #search_results_section {
     width: 86%;
-    float: right;   
+    float: right;
 }
 
 #search_filter_menu_section {
@@ -417,49 +417,61 @@ body {
     margin-top: 1%;
 }
 
-#search_filter_menu_section h2 {
-    font-size: 1.8em;
-    font-weight: 600;
-}
+    #search_filter_menu_section h2 {
+        font-size: 1.8em;
+        font-weight: 600;
+    }
 
-#search_filter_menu_section ul {
-    list-style: none;
-    margin: 0;
-}
+    #search_filter_menu_section ul {
+        list-style: none;
+        margin: 0;
+    }
 
-#search_filter_menu_section .search_filter_menu_item {
-    line-height: 2.5;
-    border-top: 1px solid #777777;
-    border-left: 1px solid #777777;
-    border-right: 1px solid #777777;
-    border-radius: 5px;
-    background-color: #b5bdc8;
-    font-weight: 600;
-    font-size: 1.3em;
-    padding-left: 5px;
-    cursor: pointer;
-}
+    #search_filter_menu_section .search_filter_menu_item {
+        line-height: 2.5;
+        border-top: 1px solid #777777;
+        border-left: 1px solid #777777;
+        border-right: 1px solid #777777;
+        border-radius: 5px;
+        /*background-color: #b5bdc8;*/
+        font-weight: 600;
+        font-size: 1.3em;
+        padding-left: 5px;
+        cursor: pointer;
+        background-color: #ebebeb;
+        background-image: -moz-linear-gradient(top, #f5f5f5, #ddd);
+        background-image: -ms-linear-gradient(top, #f5f5f5, #ddd);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#ddd));
+        background-image: -webkit-linear-gradient(top, #f5f5f5, #ddd);
+        background-image: linear-gradient(top, #f5f5f5, #ddd);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#fff5f5f5', endColorstr='#ffdddddd', GradientType=0);
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05),inset 0 1px 0 0 #fff;
+        color: black;
+    }
+    
+    #search_filter_menu_section .search_filter_menu_item:hover {
+        background-color: #777777;
+        background-image: -moz-linear-gradient(top, #666666, #ddd);
+        background-image: -ms-linear-gradient(top, #666666, #ddd);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#ddd));
+        background-image: -webkit-linear-gradient(top, #666666, #ddd);
+        background-image: linear-gradient(top, #666666, #ddd);
+    }
 
 #search_filter_menu_section {
     margin-bottom: 3%;
 }
 
-#search_filter_menu_section .search_filter_menu_item {
-    color: black;
-}
+    #search_filter_menu_section .search_filter_menu_item_link {
+        text-decoration: none;
+    }
 
-#search_filter_menu_section .search_filter_menu_item_link {
-    text-decoration: none;
-}
+    #search_filter_menu_section #search_filter_menu_item_last {
+        border: 1px solid #777777;
+        border-radius: 5px;
+    }
 
-#search_filter_menu_section #search_filter_menu_item_last {
-    border: 1px solid #777777;
-    border-radius: 5px;
-}
-
-#search_filter_menu_section .search_filter_menu_item:hover {
-    background-color: #fff;
-}
 
 #search_results_track_list {
     margin-left: 6%;
@@ -473,46 +485,46 @@ body {
     padding: 5px;
 }
 
-#search_results_container h2 {
-    font-size: 1.7em;
-}
+    #search_results_container h2 {
+        font-size: 1.7em;
+    }
 
-#search_results_container h3 {
-    font-size: 1.2em;
-    font-weight: 500;
-}
+    #search_results_container h3 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
 
-#search_results_container .search_item_stats {
-    font-style: italic;
-}
+    #search_results_container .search_item_stats {
+        font-style: italic;
+    }
 
-#search_results_container .search_list_item {
-    list-style: none;
-    margin-bottom: 3%;
-    margin-top: 1%;
-}
+    #search_results_container .search_list_item {
+        list-style: none;
+        margin-bottom: 3%;
+        margin-top: 1%;
+    }
 
-#search_results_container .search_item {
-    display: inline-flex;
-    display: -ms-webkit-box;
-    width: 100%;
-}
+    #search_results_container .search_item {
+        display: inline-flex;
+        display: -ms-webkit-box;
+        width: 100%;
+    }
 
-#search_results_container .search_item:hover {
-    background-color: #b5bdc8;
-    opacity: 0.9;
-    cursor: default;
-}
+        #search_results_container .search_item:hover {
+            background-color: #b5bdc8;
+            opacity: 0.9;
+            cursor: default;
+        }
 
-#search_results_container .search_item img {
-    height: 130px;
-    width: 130px;
-    border: 1px solid #777777;
-}
+        #search_results_container .search_item img {
+            height: 130px;
+            width: 130px;
+            border: 1px solid #777777;
+        }
 
-#search_results_container .search_item_content {
-    margin-left: 15px;
-}
+    #search_results_container .search_item_content {
+        margin-left: 15px;
+    }
 
 /* AUTOCOMPLETE (JQuery UI) */
 .ui-autocomplete {
@@ -522,7 +534,7 @@ body {
     z-index: 1000;
     float: left;
     display: none;
-    min-width: 160px;   
+    min-width: 160px;
     padding: 4px 0;
     margin: 0 0 10px 25px;
     list-style: none;
@@ -571,18 +583,53 @@ body {
     overflow: hidden;
     margin-bottom: 10px;
 }
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+
+/* Play buttons toolbar on search */
+#grid_toolbar_container ul {
+    list-style: none;
+    display: inline-flex;
+    display: -webkit-box;
+    padding-top: 16px;
+}
+
+    #grid_toolbar_container ul li {
+        margin-left: 2%;
+    }
+
+#grid_toolbar_container {
+    width: 80%;
+    margin-left: 10%;
+    border: 1px solid #828c95;
+    border-radius: 5px;
+    background-color: #ebebeb;
+    background-image: -moz-linear-gradient(top, #f5f5f5, #ddd);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #ddd);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#ddd));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #ddd);
+    background-image: linear-gradient(top, #f5f5f5, #ddd);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#fff5f5f5', endColorstr='#ffdddddd', GradientType=0);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05),inset 0 1px 0 0 #fff;
+}
+
+#mini_filter_box {
+    display: inline-flex;
+    display: -webkit-box;
+    margin-right: 35px;
 }
