@@ -125,6 +125,7 @@ function registerPlayAllButtonClick(filteredList) {
 function playAll(filteredList) {
     
     console.log('Begin play all searched tracks...');
+    var trackIdToJumpTo = 0;
 
     for (var i = 0; i < filteredList.length; i++) {
         var elementId = filteredList[i].Id;
@@ -135,11 +136,18 @@ function playAll(filteredList) {
         var selectedToPlayNext = false;
         if (i == 0) {
             selectedToPlayNext = true;
+            trackIdToJumpTo = elementId;
         }
         
         // add track to playlist (and mark the first track as selected)
         addTracksToPlaylist(elementId, selectedToPlayNext);
     }
+    
+    // jump to first track in playlist
+    
+
+    // begin play on jumped track
+    playTrack(trackIdToJumpTo);
 }
 
 function addTracksToPlaylist(elementId, selectedToPlayNext) {
@@ -153,6 +161,7 @@ function addTracksToPlaylist(elementId, selectedToPlayNext) {
             console.log(data);
             var trackName = data.TrackName;
             var trackUrl = data.TrackStreamUrl;
+            var trackId = data.Id;
 
             var trackListItemHtml = '';
 
@@ -163,11 +172,35 @@ function addTracksToPlaylist(elementId, selectedToPlayNext) {
                 trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
             }
             
+            // append new track to our playlists
             $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
+            //TODO sync with horizontal playlist as well (append to it)
+
+            // create the newly added track
+            var newTrack = createTrack(trackId, trackUrl);
         },
         error: function (xhr, stats, errorMessage) {
             alert('Error retrieving track with Id: ' + elementId);
             console.log(errorMessage + ' (Error getting track Id: ' + elementId + ')');
         }
     });
+}
+
+function createTrack(trackId, trackUrl) {
+    var newTrack = soundManager.createSound({
+        id: trackId,
+        url: trackUrl,
+        autoLoad: true,
+        autoPlay: false,
+        onload: function() {
+            console.log('Track ' + trackId + ' loaded successfully!');
+            
+        }
+    });
+
+    return newTrack;
+}
+
+function playTrack(trackId) {
+    SM2BarPlayer.play(trackId);
 }

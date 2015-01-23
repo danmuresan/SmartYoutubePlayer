@@ -73,12 +73,30 @@ function addTrackToPlaylist(elementMarkupId) {
             console.log(data);
             var trackName = data.TrackName;
             var trackUrl = data.TrackStreamUrl;
+            var trackId = data.Id;
             var trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
+            
             $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
+
+            var newTrack = createNewTrack(trackId, trackUrl);
         },
         error: function (xhr, stats, errorMessage) {
             alert('Error retrieving track with Id: ' + elementId);
             console.log(errorMessage + ' (Error getting track Id: ' + elementId + ')');
         }
     });
+}
+
+function createNewTrack(trackId, trackUrl) {
+    var newTrack = soundManager.createSound({
+        id: trackId,
+        url: trackUrl,
+        autoLoad: true,
+        autoPlay: false,
+        onload: function () {
+            console.log('Track ' + trackId + ' loaded successfully!');
+        }
+    });
+
+    return newTrack;
 }
