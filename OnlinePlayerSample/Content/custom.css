@@ -283,6 +283,18 @@ body {
     margin-top: 5px;
 }
 
+.vid-item .thumb:hover {
+    -ilter: brightness(0.5);
+    -webkit-filter: brightness(0.5);
+    -moz-filter: brightness(0.5);
+    -o-filter: brightness(0.5);
+    -ms-filter: brightness(0.5);
+}
+
+div .selected {
+    background-color: #b5bdc8;
+}
+
 .arrows {
     position: relative;
     width: 100%;

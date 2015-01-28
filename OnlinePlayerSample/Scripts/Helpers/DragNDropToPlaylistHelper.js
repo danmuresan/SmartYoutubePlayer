@@ -63,7 +63,7 @@ bin.addEventListener('drop', function (e) {
 
 function addTrackToPlaylist(elementMarkupId) {
     var elementId = elementMarkupId.replace(/[^\d.]/g, '');
-    
+
     $.ajax({
         url: '/Player/GetTrackById',
         type: "GET",
@@ -75,7 +75,7 @@ function addTrackToPlaylist(elementMarkupId) {
             var trackUrl = data.TrackStreamUrl;
             var trackId = data.Id;
             var trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
-            
+
             $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
 
             var newTrack = createNewTrack(trackId, trackUrl);
@@ -100,3 +100,25 @@ function createNewTrack(trackId, trackUrl) {
 
     return newTrack;
 }
+
+$('.vid-item .thumb').hover(
+    function () {
+        $(this).append('<span id="play_btn_overlay">+</span>');
+        console.log(this);
+    },
+    function() {
+        $("#play_btn_overlay").remove();
+        console.log(this);
+    }
+);
+
+$(".vid-item .thumb").click(function () {
+    $('.vid-item').removeClass('selected');
+    $(this).parent().addClass('selected');
+    
+    // link selection to the other playlist as well
+    
+    // begin play
+   
+    //...
+});
