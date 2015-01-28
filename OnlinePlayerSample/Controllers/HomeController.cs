@@ -146,8 +146,10 @@ namespace OnlinePlayerSample.Controllers
         public List<TrackViewModel> FilterTracks(string searchString)
         {
             if (searchString == null) searchString = string.Empty;
+
+            var alteredSearchString = searchString.ToLower();
             var mockedTracksList = RetrieveHomePageTracks();
-            return mockedTracksList.Where(track => track.TrackName.Contains(searchString) || track.TrackDescription.Contains(searchString)).ToList();
+            return mockedTracksList.Where(track => track.TrackName.ToLower().Contains(alteredSearchString) || track.TrackDescription.ToLower().Contains(alteredSearchString)).ToList();
         }
 
         public JsonResult SearchAsynchrounously(string searchString)
