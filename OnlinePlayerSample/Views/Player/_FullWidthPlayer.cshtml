@@ -78,7 +78,7 @@
                 <ul class="sm2-playlist-bd">
                     @foreach (var track in Model)
                     {
-                        <li><a href="@track.TrackStreamUrl"><b>@track.TrackName</b>
+                        <li id="track_@track.Id"><a href="@track.TrackStreamUrl"><b>@track.TrackName</b>
                                 
                             @if (track.TrackDescription.Contains("explicit"))
                             {

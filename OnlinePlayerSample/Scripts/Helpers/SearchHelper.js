@@ -167,6 +167,7 @@ function addTracksToPlaylist(elementId, selectedToPlayNext) {
 
             if (selectedToPlayNext) {
                 $('.sm2-playlist-bd li').removeClass('selected');
+                $('.sm2-playlist-bd li a').removeAttr('id');
                 trackListItemHtml = '<li class="selected"><a id="selected_track_link"  href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
             } else {
                 trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
@@ -198,13 +199,13 @@ function createTrack(trackId, trackUrl) {
         }
     });
 
-    playAddedTrack();
+    beginPlayAllTracks();
 
     return newTrack;
 }
 
-function playAddedTrack() {
-    console.log('Track clicked...');
+function beginPlayAllTracks() {
+    console.log('Begin play all tracks');
     
     // see http://stackoverflow.com/questions/5811122/how-to-trigger-a-click-on-a-link-using-jquery for explanations
     document.getElementById('selected_track_link').click();

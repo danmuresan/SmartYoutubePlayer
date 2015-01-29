@@ -74,9 +74,8 @@ function addTrackToPlaylist(elementMarkupId) {
             var trackName = data.TrackName;
             var trackUrl = data.TrackStreamUrl;
             var trackId = data.Id;
-            var trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
 
-            $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
+            appendNewTrackToDropDownPlaylist(trackUrl, trackName);
 
             var newTrack = createNewTrack(trackId, trackUrl);
         },
@@ -85,6 +84,11 @@ function addTrackToPlaylist(elementMarkupId) {
             console.log(errorMessage + ' (Error getting track Id: ' + elementId + ')');
         }
     });
+}
+
+function appendNewTrackToDropDownPlaylist(trackUrl, trackName) {
+    var trackListItemHtml = '<li><a href="' + trackUrl + '"><b>' + trackName + '</b></a></li>';
+    $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd').append(trackListItemHtml);
 }
 
 function createNewTrack(trackId, trackUrl) {
@@ -112,13 +116,22 @@ $('.vid-item .thumb').hover(
     }
 );
 
-$(".vid-item .thumb").click(function () {
+function beginPlayTrack() {
+    document.getElementById('selected_track_link').click();
+}
+
+$(".vid-item .thumb").live('click', function () {
     $('.vid-item').removeClass('selected');
     $(this).parent().addClass('selected');
     
-    // link selection to the other playlist as well
-    
-    // begin play
-   
+    // link selection to the other playlist as well (somehow signal selection of corresponding element in the dropdown playlist as well)
+    var trackId = $(this).parent().attr('id');
+    $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd li').removeClass('selected');
+    $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd #' + trackId).addClass('selected');
+    $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd #' + trackId + ' a').attr('id', 'selected_track_link');
+
+    // begin play (simply call the newly added + selected element in the playlist)
+    document.getElementById('selected_track_link').click();
+
     //...
 });
