@@ -127,6 +127,7 @@ $(".vid-item .thumb").live('click', function () {
     // link selection to the other playlist as well (somehow signal selection of corresponding element in the dropdown playlist as well)
     var trackId = $(this).parent().attr('id');
     $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd li').removeClass('selected');
+    $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd li a').removeAttr('id');
     $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd #' + trackId).addClass('selected');
     $('#full_width_player .sm2-playlist-wrapper .sm2-playlist-bd #' + trackId + ' a').attr('id', 'selected_track_link');
 
